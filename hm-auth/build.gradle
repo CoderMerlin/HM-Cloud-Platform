@@ -1,0 +1,4 @@
+jar.enabled(true)
+project(':hm-auth'){
+    project(':hm-common')
+}

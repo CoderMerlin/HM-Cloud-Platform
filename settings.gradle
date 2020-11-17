@@ -1,0 +1,6 @@
+rootProject.name = 'hm-cloud-platform'
+include 'hm-auth'
+include 'hm-common'
+include 'hm-gateway'
+include 'hm-web'
+
