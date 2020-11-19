@@ -9,3 +9,5 @@ gradlew wrapper --gradle-version=6.7
 
 - 2.如何构建gradle？
 https://www.cnblogs.com/ly-gaoshuaige/p/12045823.html
+https://www.cnblogs.com/dauber/p/9466374.html
+
