@@ -30,7 +30,6 @@ public class LoginController {
 
     @RequestMapping("/login")
     public String showLogin() {
-        System.out.println("hello");
         return "login.html";
     }
 
