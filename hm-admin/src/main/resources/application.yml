@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: admin
+  main:
+    allow-bean-definition-overriding: true  # 存在同名允许被覆盖
+  # redis
+  redis:
+    host: localhost
+    port: 6379
+  session:
+    store-type: redis
+server:
+  port: 8083
+  servlet:
+    session:
+      # session 过期时间，单位：秒ession.timeout=60
+      timeout: 60
+

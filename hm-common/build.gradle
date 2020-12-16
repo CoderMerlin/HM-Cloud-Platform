@@ -1,4 +1,27 @@
-jar.enabled(true)
-project(':hm-common'){
+/*
+   * 为所有模块指定公共的依赖
+   * 注意这里有些默认不用再指定版本了，已经由上面的dependencyManagement管理了
+   * */
+dependencies {
+    compile 'org.springframework.session:spring-session-data-redis'
+    compile 'org.springframework.boot:spring-boot-starter-data-redis'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
+    testImplementation 'org.springframework.security:spring-security-test'
 
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    annotationProcessor "org.projectlombok:lombok"
+    compile "org.springframework.boot:spring-boot-configuration-processor"
+    compile "org.projectlombok:lombok"
+    implementation "org.apache.commons:commons-lang3"
+    implementation "org.apache.commons:commons-collections4:4.3"
+    compile "org.springframework.boot:spring-boot-starter-web"
+
+
+    implementation fileTree(dir: 'libs', includes: ['*.jar'])
+    testAnnotationProcessor "org.projectlombok:lombok"
+    testCompileOnly "org.projectlombok:lombok"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+
+    runtimeOnly 'mysql:mysql-connector-java'
 }

@@ -11,3 +11,7 @@ gradlew wrapper --gradle-version=6.7
 https://www.cnblogs.com/ly-gaoshuaige/p/12045823.html
 https://www.cnblogs.com/dauber/p/9466374.html
 
+- 3.implementation、api、compileOnly区别详解
+
+https://blog.csdn.net/yuzhiqiang_1993/article/details/78366985
+
