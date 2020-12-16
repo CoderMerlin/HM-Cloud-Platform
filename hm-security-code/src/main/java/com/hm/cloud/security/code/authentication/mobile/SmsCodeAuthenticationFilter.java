@@ -1,7 +1,8 @@
-package com.hm.cloud.admin.auth.filter;
+package com.hm.cloud.security.code.authentication.mobile;
 
 
-import com.hm.cloud.admin.auth.token.SmsCodeAuthenticationToken;
+
+import com.hm.cloud.security.code.properties.SecurityConstants;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -12,6 +13,7 @@ import org.springframework.util.Assert;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
 　* @Description: 短信登录的鉴权过滤器，模仿 UsernamePasswordAuthenticationFilter 实现
 　* @author Coder编程
@@ -19,24 +21,28 @@ import javax.servlet.http.HttpServletResponse;
 　*/
 
 public class SmsCodeAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
-    /**
-     * form表单中手机号码的字段name
-     */
-    public static final String SPRING_SECURITY_FORM_MOBILE_KEY = "mobile";
+    // ~ Static fields/initializers
+    // =====================================================================================
 
-    private String mobileParameter = SPRING_SECURITY_FORM_MOBILE_KEY;
+    private String mobileParameter = SecurityConstants.DEFAULT_PARAMETER_NAME_MOBILE;
     /**
-     * 是否仅 POST 方式
+     * 仅post方式提交
      */
     private boolean postOnly = true;
 
+    // ~ Constructors
+    // ===================================================================================================
+
     public SmsCodeAuthenticationFilter() {
-        // 短信登录的请求 post 方式的 /sms/login
-        super(new AntPathRequestMatcher("/sms/login", "POST"));
+        // 拦截该路径，如果是访问该路径，则标识是需要短信登录
+        super(new AntPathRequestMatcher(SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_MOBILE, "POST"));
     }
 
-    @Override
-    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
+    // ~ Methods
+    // ========================================================================================================
+
+    public Authentication attemptAuthentication(HttpServletRequest request,
+                                                HttpServletResponse response) throws AuthenticationException {
         if (postOnly && !request.getMethod().equals("POST")) {
             throw new AuthenticationServiceException(
                     "Authentication method not supported: " + request.getMethod());
@@ -53,6 +59,8 @@ public class SmsCodeAuthenticationFilter extends AbstractAuthenticationProcessin
         SmsCodeAuthenticationToken authRequest = new SmsCodeAuthenticationToken(mobile);
 
         // Allow subclasses to set the "details" property
+        // 把request里面的一些信息copy近token里面
+        // 后面认证成功的时候还需要copy这信息到新的token
         setDetails(request, authRequest);
 
         return this.getAuthenticationManager().authenticate(authRequest);
@@ -62,12 +70,9 @@ public class SmsCodeAuthenticationFilter extends AbstractAuthenticationProcessin
         return request.getParameter(mobileParameter);
     }
 
-    protected void setDetails(HttpServletRequest request, SmsCodeAuthenticationToken authRequest) {
+    protected void setDetails(HttpServletRequest request,
+                              SmsCodeAuthenticationToken authRequest) {
         authRequest.setDetails(authenticationDetailsSource.buildDetails(request));
-    }
-
-    public String getMobileParameter() {
-        return mobileParameter;
     }
 
     public void setMobileParameter(String mobileParameter) {
@@ -77,5 +82,9 @@ public class SmsCodeAuthenticationFilter extends AbstractAuthenticationProcessin
 
     public void setPostOnly(boolean postOnly) {
         this.postOnly = postOnly;
+    }
+
+    public final String getMobileParameter() {
+        return mobileParameter;
     }
 }

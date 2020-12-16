@@ -3,4 +3,6 @@ include 'hm-auth'
 include 'hm-common'
 include 'hm-gateway'
 include 'hm-admin'
+include 'hm-security-code'
+include 'hm-quartz'
 

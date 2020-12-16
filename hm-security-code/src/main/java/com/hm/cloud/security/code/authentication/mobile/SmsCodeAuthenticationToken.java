@@ -1,4 +1,4 @@
-package com.hm.cloud.admin.auth.token;
+package com.hm.cloud.security.code.authentication.mobile;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;

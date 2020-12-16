@@ -1,7 +1,6 @@
-/*
-   * 为所有模块指定公共的依赖
-   * 注意这里有些默认不用再指定版本了，已经由上面的dependencyManagement管理了
-   * */
+/**
+ * 导入依赖
+ */
 dependencies {
     compile 'org.springframework.session:spring-session-data-redis'
     compile 'org.springframework.boot:spring-boot-starter-data-redis'

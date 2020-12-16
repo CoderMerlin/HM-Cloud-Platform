@@ -41,9 +41,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private CustomUserDetailsService userDetailsService;
 
     @Autowired
-    private SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
-
-    @Autowired
     private DataSource dataSource;
 
     @Bean
@@ -89,7 +86,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         });
     }
 
-    /*@Override
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 // 如果有允许匿名的url，填在下面
@@ -130,9 +127,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // 关闭CSRF跨域
         http.csrf().disable();
     }
-*/
 
-    @Override
+
+    /*@Override
     protected void configure(HttpSecurity http) throws Exception {
         http.apply(smsCodeAuthenticationSecurityConfig).and().authorizeRequests()
                 // 如果有允许匿名的url，填在下面
@@ -148,7 +145,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         // 关闭CSRF跨域
         http.csrf().disable();
-    }
+    }*/
 
     @Override
     public void configure(WebSecurity web) throws Exception {

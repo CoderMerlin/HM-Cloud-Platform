@@ -1,9 +1,8 @@
-package com.hm.cloud.admin.auth.config;
+package com.hm.cloud.security.code.authentication.mobile;
 
-import com.hm.cloud.admin.auth.filter.SmsCodeAuthenticationFilter;
-import com.hm.cloud.admin.auth.handler.CustomAuthenticationFailureHandler;
-import com.hm.cloud.admin.auth.handler.CustomAuthenticationSuccessHandler;
-import com.hm.cloud.admin.auth.provider.SmsCodeAuthenticationProvider;
+
+import com.hm.cloud.security.code.authentication.handler.CustomAuthenticationFailureHandler;
+import com.hm.cloud.security.code.authentication.handler.CustomAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;

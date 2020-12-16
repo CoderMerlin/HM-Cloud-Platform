@@ -75,8 +75,6 @@ public class LoginController {
         }
     }
 
-
-
     @RequestMapping("/admin")
     @ResponseBody
     @PreAuthorize("hasPermission('/admin','r')")
