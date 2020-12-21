@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
 　* @Description: 权限实体类
-　* @author Merlin
+　* @author Coder编程
 　* @date 2020/11/20 10:10
 　*/
 

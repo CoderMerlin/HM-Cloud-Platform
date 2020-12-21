@@ -1,7 +1,7 @@
 package com.hm.cloud.common.exception;
 
 /**
- * @author Merlin
+ * @author Coder编程
  * @Title: HMException
  * @ProjectName hm-cloud-platform
  * @Description: TODO

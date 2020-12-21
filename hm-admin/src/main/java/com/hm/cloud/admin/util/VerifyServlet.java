@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 /**
- * @author merlin
+ * @author Coder编程
  * @date 2018/3/29 20:35
  */
 public class VerifyServlet extends HttpServlet {

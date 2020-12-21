@@ -1,7 +1,7 @@
 package com.hm.cloud.common.utils;
 
 /**
- * @author Merlin
+ * @author Coder编程
  * @Title: Constant
  * @ProjectName hm-cloud-platform
  * @Description: TODO

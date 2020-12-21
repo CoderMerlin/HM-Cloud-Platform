@@ -2,13 +2,26 @@
  * 导入依赖
  */
 dependencies {
+    /*redis session*/
     compile 'org.springframework.session:spring-session-data-redis'
     compile 'org.springframework.boot:spring-boot-starter-data-redis'
+    /*security框架*/
     compile 'org.springframework.boot:spring-boot-starter-security'
+    /*mybatis 框架*/
     compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
-    testImplementation 'org.springframework.security:spring-security-test'
+    /*拦截器*/
+    compile 'org.springframework.boot:spring-boot-starter-aop'
+    /*谷歌gson解析器*/
+    compile 'com.google.code.gson:gson:2.8.6'
+    /*阿里json解析器*/
+    compile 'com.alibaba:fastjson:1.2.9'
+    /*Token生成与解析*/
+    compile 'io.jsonwebtoken:jjwt:0.9.1'
+    /*解析客户端操作系统、浏览器等*/
+    compile 'eu.bitwalker:UserAgentUtils:1.19'
 
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    /*lombok*/
     annotationProcessor "org.projectlombok:lombok"
     compile "org.springframework.boot:spring-boot-configuration-processor"
     compile "org.projectlombok:lombok"
@@ -21,6 +34,6 @@ dependencies {
     testAnnotationProcessor "org.projectlombok:lombok"
     testCompileOnly "org.projectlombok:lombok"
     testImplementation "org.springframework.boot:spring-boot-starter-test"
-
+    testImplementation 'org.springframework.security:spring-security-test'
     runtimeOnly 'mysql:mysql-connector-java'
 }

@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.DefaultSecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
 
@@ -17,16 +19,16 @@ public class SmsCodeAuthenticationSecurityConfig extends SecurityConfigurerAdapt
     @Autowired
     private UserDetailsService userDetailsService;
     @Autowired
-    private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
+    private AuthenticationSuccessHandler authenticationSuccessHandler;
     @Autowired
-    private CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
+    private AuthenticationFailureHandler authenticationFailureHandler;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
         SmsCodeAuthenticationFilter smsCodeAuthenticationFilter = new SmsCodeAuthenticationFilter();
         smsCodeAuthenticationFilter.setAuthenticationManager(http.getSharedObject(AuthenticationManager.class));
-        smsCodeAuthenticationFilter.setAuthenticationSuccessHandler(customAuthenticationSuccessHandler);
-        smsCodeAuthenticationFilter.setAuthenticationFailureHandler(customAuthenticationFailureHandler);
+        smsCodeAuthenticationFilter.setAuthenticationSuccessHandler(authenticationSuccessHandler);
+        smsCodeAuthenticationFilter.setAuthenticationFailureHandler(authenticationFailureHandler);
 
         SmsCodeAuthenticationProvider smsCodeAuthenticationProvider = new SmsCodeAuthenticationProvider();
         smsCodeAuthenticationProvider.setUserDetailsService(userDetailsService);

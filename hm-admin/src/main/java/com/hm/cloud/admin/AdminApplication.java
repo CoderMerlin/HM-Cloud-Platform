@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
 /**
- * @author Merlin
+ * @author Coder编程
  * @Title: AdminApplication
  * @ProjectName hm-cloud-platform
  * @Description: TODO

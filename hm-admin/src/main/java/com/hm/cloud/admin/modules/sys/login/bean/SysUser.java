@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author Merlin
+ * @author Coder编程
  * @Title: SysUser
  * @ProjectName hm-cloud-platform
  * @Description: TODO

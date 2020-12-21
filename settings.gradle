@@ -5,4 +5,5 @@ include 'hm-gateway'
 include 'hm-admin'
 include 'hm-security-code'
 include 'hm-quartz'
+include 'hm-system'
 
