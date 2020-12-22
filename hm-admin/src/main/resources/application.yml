@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: admin
+ #   active: admin
   main:
     allow-bean-definition-overriding: true  # 存在同名允许被覆盖
   # redis
@@ -15,4 +15,20 @@ server:
     session:
       # session 过期时间，单位：秒ession.timeout=60
       timeout: 60
-
+# 项目相关配置
+hm:
+  cloud:
+  # 名称
+    name: hm-cloud
+    # 版本
+    version: 3.2.1
+    # 版权年份
+    copyrightYear: 2020
+    # 实例演示开关
+    demoEnabled: true
+    # 文件路径 示例（ Windows配置D:/ruoyi/uploadPath，Linux配置 /home/ruoyi/uploadPath）
+    profile: D:/hm-cloud/uploadPath
+    # 获取ip地址开关
+    addressEnabled: false
+    # 验证码类型 math 数组计算 char 字符验证
+    captchaType: math

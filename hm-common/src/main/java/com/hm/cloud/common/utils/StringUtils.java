@@ -6,11 +6,12 @@ import com.hm.cloud.common.utils.text.StrFormatter;
 import java.util.*;
 
 /**
- * 　* @Description: 字符串工具类
- * 　* @author Merlin
- * 　* @date 2020/12/17 14:47
- *
- */
+  * @description: 字符串工具类
+  * @author Merlin
+  * 欢迎关注公众号：Coder编程 
+  * 网站：http://coder-programming.cn/
+  * @date 2020/12/21  19:15
+  */
 
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**

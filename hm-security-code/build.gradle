@@ -1,3 +1,7 @@
+group = 'cn.hm.cloud'
+version = '0.0.1-SNAPSHOT'
+apply plugin: 'java'
+
 dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
     // security自动配置
@@ -8,11 +12,6 @@ dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-oauth2')
     // redis自动配置
     compile('org.springframework.boot:spring-boot-starter-data-redis')
-    // jedis 切换
-//    compile('org.springframework.boot:spring-boot-starter-data-redis'){
-//        exclude group: 'io.lettuce', module: 'lettuce-core'
-//    }
-//    compile 'redis.clients:jedis'
     // jdbc数据库数据库
     compile('org.springframework.boot:spring-boot-starter-jdbc')
     // 在本环境中会引用 5.1.46这个包
@@ -34,4 +33,5 @@ dependencies {
     compile('org.springframework.social:spring-social-config')
     compile('org.springframework.social:spring-social-security')
     compile('org.springframework.social:spring-social-web')
+    compile "org.springframework.boot:spring-boot-starter-web"
 }

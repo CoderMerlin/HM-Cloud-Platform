@@ -1,7 +1,8 @@
 package com.hm.cloud.admin.system.service;
 
 
-import com.hm.cloud.common.core.domain.entity.SysLogininfor;
+
+import com.hm.cloud.system.domain.SysLogininfor;
 
 import java.util.List;
 

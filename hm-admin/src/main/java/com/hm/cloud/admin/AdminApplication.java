@@ -5,7 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Coder编程
@@ -14,13 +16,16 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
  * @Description: TODO
  * @date 2020/11/1718:17
  */
-
 @EnableRedisHttpSession
 @SpringBootApplication
 public class AdminApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AdminApplication.class, args);
+        try {
+            SpringApplication.run(AdminApplication.class, args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**

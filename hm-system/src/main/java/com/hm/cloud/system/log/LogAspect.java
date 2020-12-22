@@ -1,16 +1,18 @@
-package com.hm.cloud.common.log;
+package com.hm.cloud.system.log;
 
 
 import com.alibaba.fastjson.JSON;
 import com.hm.cloud.common.core.domain.LoginUser;
-import com.hm.cloud.common.core.domain.entity.SysOperLog;
+import com.hm.cloud.common.log.BusinessStatus;
+import com.hm.cloud.common.log.Log;
 import com.hm.cloud.common.manager.AsyncManager;
-import com.hm.cloud.common.manager.factory.AsyncFactory;
 import com.hm.cloud.common.spring.SpringUtils;
 import com.hm.cloud.common.utils.ServletUtils;
+import com.hm.cloud.common.utils.StringUtils;
 import com.hm.cloud.common.utils.ip.IpUtils;
 import com.hm.cloud.common.web.service.TokenService;
-import org.apache.commons.lang3.StringUtils;
+import com.hm.cloud.system.domain.SysOperLog;
+import com.hm.cloud.system.factory.AsyncFactory;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -34,7 +36,6 @@ import java.util.Map;
  * 　* @Description: 操作日志记录处理
  * 　* @author Coder编程
  * 　* @date 2020/12/16 16:59
- *
  */
 
 @Aspect
@@ -42,7 +43,9 @@ import java.util.Map;
 public class LogAspect {
     private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
 
-    /** 配置织入点 */
+    /**
+     * 配置织入点
+     */
     @Pointcut("@annotation(com.hm.cloud.common.log.Log)")
     public void logPointCut() {
     }

@@ -21,18 +21,16 @@ dependencies {
     compile 'eu.bitwalker:UserAgentUtils:1.19'
 
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
-    /*lombok*/
-    annotationProcessor "org.projectlombok:lombok"
+
+
     compile "org.springframework.boot:spring-boot-configuration-processor"
-    compile "org.projectlombok:lombok"
-    implementation "org.apache.commons:commons-lang3"
+    compile "org.apache.commons:commons-lang3"
     implementation "org.apache.commons:commons-collections4:4.3"
     compile "org.springframework.boot:spring-boot-starter-web"
 
 
     implementation fileTree(dir: 'libs', includes: ['*.jar'])
-    testAnnotationProcessor "org.projectlombok:lombok"
-    testCompileOnly "org.projectlombok:lombok"
+
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation 'org.springframework.security:spring-security-test'
     runtimeOnly 'mysql:mysql-connector-java'

@@ -1,7 +1,4 @@
-/*jar.enabled(true)
-project(':hm-auth'){
-    project(':hm-common')
-}*/
+
 dependencies {
 
     compile project(':hm-common')
