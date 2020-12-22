@@ -1,6 +1,6 @@
 spring:
   profiles:
- #   active: admin
+    active: admin
   main:
     allow-bean-definition-overriding: true  # 存在同名允许被覆盖
   # redis
